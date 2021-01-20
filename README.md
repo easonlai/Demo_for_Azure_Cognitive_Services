@@ -26,3 +26,9 @@
 * azure_cognitive_services_demo_sp.ipynb or azure_cognitive_services_demo_sp.html
 * Speech to Text (STT)
 * Text to Speech (TTS)
+
+**[Face Service](https://docs.microsoft.com/en-us/azure/cognitive-services/face/overview)**
+* azure_cognitive_services_demo_fa.ipynb or azure_cognitive_services_demo_fa.html
+* Detect faces in an image
+* Find similar faces
+* Use Face Service via Rest API
