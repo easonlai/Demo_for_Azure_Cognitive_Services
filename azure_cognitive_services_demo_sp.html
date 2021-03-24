@@ -14477,11 +14477,10 @@ exporting ./wav_chunk/chunk60.wav
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_subscription</span><span class="o">=</span><span class="s2">&quot;PLEASE_ENTER_YOUR_OWN_KEY&quot;</span>
-<span class="n">my_region</span><span class="o">=</span><span class="s2">&quot;southeastasia&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">playsound</span><span class="p">(</span><span class="s1">&#39;./wav_chunk/chunk2.wav&#39;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14492,10 +14491,11 @@ exporting ./wav_chunk/chunk60.wav
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">playsound</span><span class="p">(</span><span class="s1">&#39;./wav_chunk/chunk2.wav&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_subscription</span><span class="o">=</span><span class="s2">&quot;PLEASE_ENTER_YOUR_OWN_KEY&quot;</span>
+<span class="n">my_region</span><span class="o">=</span><span class="s2">&quot;southeastasia&quot;</span>
 </pre></div>
 
      </div>
@@ -14509,7 +14509,8 @@ exporting ./wav_chunk/chunk60.wav
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">from_file</span><span class="p">():</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Using default domain</span>
+<span class="k">def</span> <span class="nf">from_file</span><span class="p">():</span>
     <span class="n">speech_config</span> <span class="o">=</span> <span class="n">speechsdk</span><span class="o">.</span><span class="n">SpeechConfig</span><span class="p">(</span><span class="n">subscription</span><span class="o">=</span><span class="n">my_subscription</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="n">my_region</span><span class="p">)</span>
     <span class="n">speech_config</span><span class="o">.</span><span class="n">speech_recognition_language</span><span class="o">=</span><span class="s2">&quot;zh-HK&quot;</span>
     <span class="n">audio_input</span> <span class="o">=</span> <span class="n">speechsdk</span><span class="o">.</span><span class="n">audio</span><span class="o">.</span><span class="n">AudioConfig</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;./wav_chunk/chunk2.wav&quot;</span><span class="p">)</span>
@@ -14545,6 +14546,45 @@ exporting ./wav_chunk/chunk60.wav
 
 </div>
 
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">endPoint</span> <span class="o">=</span> <span class="s2">&quot;wss://PLEASE_ENTER_YOUR_OWN_CUSTOM_DOMAIN_NAME.cognitiveservices.azure.com/stt/speech/recognition/conversation/cognitiveservices/v1?language=zh-HK&quot;</span>
+<span class="n">my_subscription</span><span class="o">=</span><span class="s2">&quot;PLEASE_ENTER_YOUR_OWN_KEY&quot;</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Using custom domain if using Service Endpoint or Private Endpoint for vNet integration</span>
+<span class="k">def</span> <span class="nf">from_file</span><span class="p">():</span>
+    <span class="n">speech_config</span> <span class="o">=</span> <span class="n">speechsdk</span><span class="o">.</span><span class="n">SpeechConfig</span><span class="p">(</span><span class="n">subscription</span><span class="o">=</span><span class="n">my_subscription</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="n">endPoint</span><span class="p">)</span>
+    <span class="n">speech_config</span><span class="o">.</span><span class="n">speech_recognition_language</span><span class="o">=</span><span class="s2">&quot;zh-HK&quot;</span>
+    <span class="n">audio_input</span> <span class="o">=</span> <span class="n">speechsdk</span><span class="o">.</span><span class="n">audio</span><span class="o">.</span><span class="n">AudioConfig</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;./wav_chunk/chunk2.wav&quot;</span><span class="p">)</span>
+    <span class="n">speech_recognizer</span> <span class="o">=</span> <span class="n">speechsdk</span><span class="o">.</span><span class="n">SpeechRecognizer</span><span class="p">(</span><span class="n">speech_config</span><span class="o">=</span><span class="n">speech_config</span><span class="p">,</span> <span class="n">audio_config</span><span class="o">=</span><span class="n">audio_input</span><span class="p">)</span>
+    
+    <span class="n">result</span> <span class="o">=</span> <span class="n">speech_recognizer</span><span class="o">.</span><span class="n">recognize_once_async</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+
+<span class="n">from_file</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
 </div>
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
